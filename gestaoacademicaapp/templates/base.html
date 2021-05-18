@@ -20,14 +20,24 @@ ous">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+               <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Volta pra página home</a>
+                        <a class="nav-link" href="/">Grade Horária</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navlink" href="https://google.com" target="blank">Vai para o google</a>
+                        <a class="nav-link" href="/accounts/logout">Sair</a>
                     </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/login">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin</a>
+                    </li>
+                    {% endif %}
                 </ul>
+
             </div>
         </nav>
         {% block content %}

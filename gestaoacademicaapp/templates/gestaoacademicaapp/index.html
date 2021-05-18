@@ -4,6 +4,10 @@
 <div class="offset-1 col-10 list-div">
 <body background="https://images.hdqwalls.com/download/polygon-abstract-shapes-sharp-4k-wt-1600x900.jpg">
     <h2><font color=white>Disciplinas do Curso</font></h2>
+    {% if user.is_authenticated %}
+    <h3 style="color: #6aafd6"> Olá  {{ user.username }} </h3>
+    {% endif %}
+
     <table class="blueTable">
         <thead>
             <tr>
